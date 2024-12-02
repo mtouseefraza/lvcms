@@ -13,4 +13,6 @@ class BaseController extends Controller {
             ['name' => 'Contact', 'url' => url('/contact')],
         ]);
     }
+
+    
 }
