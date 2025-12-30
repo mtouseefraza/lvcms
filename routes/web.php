@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SectionController;
+use App\Http\Controllers\ModelsController;
+use App\Http\Controllers\UserPermissionController;
 
 
 /*
@@ -30,7 +32,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('sections', SectionController::class)->except(['show']);
-    Route::get('sections/export', [SectionController::class, 'export'])->name('sections.export');
+    Route::get('sections/export', [SectionController::class, 'export'])->name('sections.export');  
+
+    Route::resource('models', ModelsController::class)->except(['show']);
+    Route::get('models/export', [ModelsController::class, 'export'])->name('models.export');
+
+    Route::resource('user-permission', UserPermissionController::class)->except(['show']);
+    Route::get('user-permission/export', [UserPermissionController::class, 'export'])->name('user-permission.export');
+
 
     Route::middleware('role:superadmin')->group(function () {
         Route::get('/superadmin', function () {

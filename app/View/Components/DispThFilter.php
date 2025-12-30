@@ -24,8 +24,10 @@ class DispThFilter extends Component
     public $class;
     public $id;
     public $type;
+    public $readOnly;
+    public $btnClear;
     public $items=[];
-    public function __construct($page,$name,$value='',$placeholder='',$sortOrder='',$sortBy='',$otherId='',$showId='tbl-result',$filtersId='frm-filters',$class='',$id='',$type='text',$items=array())
+    public function __construct($page,$name,$value='',$placeholder='',$sortOrder='',$sortBy='',$otherId='',$showId='tbl-result',$filtersId='frm-filters',$class='',$id='',$type='text',$readOnly='',$btnClear='',$items=array())
     {
         $this->page = $page;
         $this->name = $name;
@@ -39,6 +41,8 @@ class DispThFilter extends Component
         $this->class = $class;
         $this->id = $id;
         $this->type = $type;
+        $this->readOnly = $readOnly;
+        $this->btnClear = $btnClear;
         $this->items = $items;
         
     }

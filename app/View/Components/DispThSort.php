@@ -21,8 +21,9 @@ class DispThSort extends Component
     public $filtersId;
     public $otherId;
     public $class;
+    public $width;
 
-    public function __construct($page,$name,$sortOrder='',$displayName,$sortBy='',$otherId='',$showId='tbl-result',$filtersId='frm-filters',$class='')
+    public function __construct($page='',$name='',$sortOrder='',$displayName='',$sortBy='',$otherId='',$showId='tbl-result',$filtersId='frm-filters',$class='',$width='')
     {
         $this->page = $page;
         $this->name = $name;
@@ -33,6 +34,7 @@ class DispThSort extends Component
         $this->filtersId = $filtersId;
         $this->otherId = $otherId;
         $this->class = $class;
+        $this->width = $width;
     }
 
     /**

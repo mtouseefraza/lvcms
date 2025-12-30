@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sections', function (Blueprint $table) {
-            $table->id(); // Primary key
-            $table->string('name',15);
-            $table->string('type',1);
-            $table->string('icon',30);
-            $table->text('description');
+        Schema::create('user_permissions', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sections');
+        Schema::dropIfExists('user_permissions');
     }
 };
